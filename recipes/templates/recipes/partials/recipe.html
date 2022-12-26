@@ -1,0 +1,53 @@
+<div class="recipe recipe-list-item">
+    <div class="recipe-cover">
+        <a href="{% url 'recipes:recipe' 1 %}">
+            <img src={{ recipe.url }} alt="temporario">
+        </a>
+    </div>
+    <div class="recipe-title-container">
+        <h2 class="recipe-title">{{ recipe.title }}</h2>
+    </div>
+
+    <div class="recipe-author">
+        <span class="recipe-author-item">
+            <i class="fas fa-user"></i>
+            {{ recipe.name}}
+        </span>
+        <span class="recipe-author-item">
+            <i class="fas fa-calendar-alt"></i>
+            {{ recipe.data | date:"d/m/Y"}}
+        </span>
+        <span class="recipe-author-item">
+            <a href="/recipes/category/cafe-da-manha/">
+                <i class="fas fa-layer-group"></i>
+                <span>Café da manhã</span>
+            </a>
+        </span>
+    </div>
+
+    <div class="recipe-content">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A ad ex, nemo omnis, quo quae id aut
+            nulla soluta ipsa laborum neque fuga, iusto blanditiis voluptates quis? Placeat, rem error.</p>
+    </div>
+
+    <div class="recipe-meta-container">
+        <div class="recipe-meta recipe-preparation">
+            <h3 class="recipe-meta-title"><i class="fas fa-stopwatch"></i> Preparo</h3>
+            <div class="recipe-meta-text">
+                0 Minutos
+            </div>
+        </div>
+        <div class="recipe-meta recipe-servings">
+            <h3 class="recipe-meta-title"><i class="fas fa-pizza-slice"></i> Porções</h3>
+            <div class="recipe-meta-text">
+                0 Porções
+            </div>
+        </div>
+    </div>
+
+    {% if is_home_page is not True %}
+        <div>
+            <h3>IF do Django</h3>
+        </div>
+    {% endif %}
+</div> 
